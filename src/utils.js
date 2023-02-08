@@ -13,3 +13,14 @@ export const range = (start, end, step = 1) => {
   }
   return output;
 };
+
+export const formatText = ( text, style = 'uppercase' ) => {
+  const output = `${ text }`;
+  if ( style === 'uppercase' ) {
+    return output.toUpperCase();
+  } else if ( style === 'lowerCase' ) {
+    return output.toLowerCase();
+  }
+  
+  return output;
+}
