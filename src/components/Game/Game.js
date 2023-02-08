@@ -18,6 +18,7 @@ function Game() {
   // Pick a random word on every pageload
   const [ answer, setAnswer ] = React.useState(() => sample(WORDS))
   console.info({ answer })
+  
   const [ gameStatus, setGameStatus ] = React.useState('running');
   const [ guesses, setGuesses ] = React.useState([]);
 

@@ -28,6 +28,8 @@ function GuessInput({ gameStatus, handleAddGuesses }) {
         disabled={ gameStatus !== 'running' }
         value={ userInput }
         required
+        title="5 letter word"
+        pattern="[a-zA-Z]{5}"
         minLength={5}
         maxLength={5}
         onChange={ (e) => setUserInput( formatText( e.target.value ) ) }

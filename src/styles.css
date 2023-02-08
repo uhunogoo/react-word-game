@@ -236,17 +236,19 @@ h1 {
 */
 .keyboard {
   display: grid;
-  gap: 0.65rem;
+  gap: 5px;
 }
 .keyboard-row {
   display: flex;
   justify-content: center;
-  gap: 0.65rem;
+  gap: 1%;
 }
 .keyboard-key {
   background: var(--color-gray-900);
   border-radius: 0.15rem;
-  padding: 0.3rem 0.5rem;
+  padding: 2% 0;
+  text-align: center;
+  width: 9%;
 }
 
 .keyboard-key.correct {
