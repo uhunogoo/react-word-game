@@ -1,21 +1,18 @@
 import React from "react";
 
-// Defaults
-import { formatText } from "../../utils";
-
 function GuessInput({ gameStatus, handleAddGuesses }) {
-  const [ userInput, setUserInput ] = React.useState('')
+  const [ tentativeGuess, setTentativeGuess ] = React.useState('')
   function handleSubmit(e) {
     e.preventDefault();
     
-    if (userInput.length !== 5) {
+    if (tentativeGuess.length !== 5) {
       window.alert('This word 5 letters long!');
       return;
     }
 
     // Add to the list and clean current 
-    handleAddGuesses( userInput );
-    setUserInput('');
+    handleAddGuesses( tentativeGuess );
+    setTentativeGuess('');
   } 
 
   return (
@@ -28,13 +25,16 @@ function GuessInput({ gameStatus, handleAddGuesses }) {
         id="guess-input" 
         type="text"
         disabled={ gameStatus !== 'running' }
-        value={ userInput }
+        value={ tentativeGuess }
         required
         title="5 letter word"
         pattern="[a-zA-Z]{5}"
         minLength={5}
         maxLength={5}
-        onChange={ (e) => setUserInput( formatText( e.target.value ) ) }
+        onChange={ (e) => {
+          const formatText = e.target.value.toUpperCase();
+          setTentativeGuess( formatText );
+        } }
       />
     </form>
   );

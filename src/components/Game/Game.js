@@ -22,13 +22,13 @@ function Game() {
   const [ gameStatus, setGameStatus ] = React.useState('running');
   const [ guesses, setGuesses ] = React.useState([]);
 
-  function handleAddGuesses(guess) {
-    const validateGuess = checkGuess(guess, answer);
+  function handleAddGuesses(tentativeGuess) {
+    const validateGuess = checkGuess(tentativeGuess, answer);
 
     const nextItems = [...guesses, validateGuess];
     setGuesses(nextItems);
     
-    if (guess.toUpperCase() === answer) {
+    if (tentativeGuess.toUpperCase() === answer) {
       setGameStatus('won');
     } else if (nextItems.length >= NUM_OF_GUESSES_ALLOWED) {
       setGameStatus('lost');
