@@ -1,4 +1,6 @@
 import React from "react";
+
+// Components
 import Banner from "../Banner/Banner";
 
 function WinBanner({ numOfGuesses, handlerRestar}) {

@@ -1,4 +1,6 @@
 import React from "react";
+
+// Defaults
 import { range } from "../../utils";
 
 const Cell = ({ letter, status }) => {

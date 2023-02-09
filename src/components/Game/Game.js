@@ -23,7 +23,9 @@ function Game() {
   const [ guesses, setGuesses ] = React.useState([]);
 
   function handleAddGuesses(guess) {
-    const nextItems = [...guesses, guess];
+    const validateGuess = checkGuess(guess, answer);
+
+    const nextItems = [...guesses, validateGuess];
     setGuesses(nextItems);
     
     if (guess.toUpperCase() === answer) {
@@ -41,21 +43,17 @@ function Game() {
     setGuesses([]);
   }
 
-  const validatedGuesses = guesses.map( guess => 
-    checkGuess(guess, answer)
-  );
-
   return (
     <>
       <GuessResult 
-        validatedGuesses={ validatedGuesses }
+        validatedGuesses={ guesses }
       />
       <GuessInput 
         gameStatus={ gameStatus }
         handleAddGuesses={ handleAddGuesses } 
       />
       
-      <Keybord validatedGuesses={validatedGuesses} />
+      <Keybord validatedGuesses={ guesses } />
 
       { gameStatus === 'won' && (
         <WinBanner 

@@ -1,8 +1,11 @@
 import React from "react";
-import Guess from "../Guess/Guess";
 
+// Defaults
 import { range } from "../../utils";
 import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
+
+// Components
+import Guess from "../Guess/Guess";
 
 function GuessResult({ validatedGuesses }) {
   return (

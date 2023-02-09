@@ -1,4 +1,6 @@
 import React from "react";
+
+// Defaults
 import { formatText } from "../../utils";
 
 function GuessInput({ gameStatus, handleAddGuesses }) {

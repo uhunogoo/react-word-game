@@ -27,12 +27,12 @@ function Keybord({ validatedGuesses }) {
         KEYS.map((row, index) => (
           <div className="keyboard-row" key={index}>
             { row.map( letter => (
-              <div 
+              <span 
                 key={letter}
                 className={`keyboard-key ${statusByLetter[letter]}`}
               >
                 { letter }
-              </div>
+              </span>
             )) }
           </div>
         ))
